@@ -18,6 +18,9 @@ $ python streamlit run streamlit_app.py
 ### Step 5: Now you will be redirected automatically to the UI application web page now you can use and experiment on different values. 
 
 
+### for more read story  : https://akashsaininasa.medium.com/genai-project-enhancing-job-matching-with-ai-building-a-rag-based-resume-filtering-system-de37621ef851
+
+
 
 
 
