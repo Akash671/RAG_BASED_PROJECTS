@@ -1,0 +1,10 @@
+langchain
+openai
+faiss-cpu
+llama-index
+nltk
+spacy
+PyPDF2
+python-docx
+uuid
+requests
