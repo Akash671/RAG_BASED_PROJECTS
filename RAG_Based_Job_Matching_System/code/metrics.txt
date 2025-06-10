@@ -1,0 +1,55 @@
+🔹 Key Metrics for Accuracy Measurement
+✅ 1️⃣ Precision & Recall (Information Retrieval Metrics)
+
+Precision → What percentage of retrieved resumes are actually relevant?
+
+Recall → What percentage of relevant resumes were successfully retrieved?
+
+Formula:
+
+plaintext
+Precision = (Relevant CVs Retrieved) / (Total CVs Retrieved)  
+Recall = (Relevant CVs Retrieved) / (Total Relevant CVs in Dataset)  
+✅ 2️⃣ Mean Reciprocal Rank (MRR) - Ranking Quality
+
+Measures the ranking quality of retrieved resumes based on HR feedback.
+
+Formula:
+
+plaintext
+MRR = 1 / Rank of First Relevant Resume  
+Example Interpretation: If the first relevant resume appears at rank 2, MRR = 1/2 = 0.5 (higher values are better).
+
+✅ 3️⃣ Cosine Similarity Between Job Description & Resumes
+
+Measures textual similarity using embeddings
+
+Higher cosine scores mean better matches
+
+Python Example:
+
+python
+from sklearn.metrics.pairwise import cosine_similarity
+
+job_desc_embedding = sentence_model.encode(job_description).reshape(1, -1)
+resume_embeddings = sentence_model.encode(resume_texts).reshape(len(resume_texts), -1)
+
+similarities = cosine_similarity(job_desc_embedding, resume_embeddings)
+print("Resume Similarity Scores:", similarities)
+✅ 4️⃣ Human Evaluation (HR Feedback)
+
+Ask recruiters to manually rate retrieved resumes from 1-5 based on relevance.
+
+Use this feedback to fine-tune filtering thresholds & rerank results.
+
+✅ 5️⃣ False Positive & False Negative Rates
+
+False Positives (irrelevant resumes retrieved) → Can affect hiring decisions.
+
+False Negatives (missed relevant resumes) → Can cause good candidates to be overlooked.
+
+Formula:
+
+plaintext
+False Positive Rate = FP / (FP + TN)
+False Negative Rate = FN / (FN + TP)
